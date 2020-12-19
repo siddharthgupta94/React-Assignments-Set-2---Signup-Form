@@ -1,12 +1,30 @@
-h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+html,
+body {
+  height: 100%;
+  background-color: #ffffff;
+  text-align: center;
+  margin: 0;
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #27aedb;
+  text-align: center;
+}
+
+#main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding: 8px;
+}
+button {
+  color: #27aedb;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
