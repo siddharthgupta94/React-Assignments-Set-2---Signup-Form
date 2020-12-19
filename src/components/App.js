@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { Form } from "./Form";
+import Form from "./Form";
 
 import "../styles/App.css";
 
@@ -11,5 +11,4 @@ const App = () => {
   );
 };
 
-export { Form };
 export default App;
