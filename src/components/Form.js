@@ -88,7 +88,6 @@ const Form = () => {
           <input
             value={state.email}
             data-testid="email"
-            type="email"
             onChange={handleChange}
           />
         </label>
@@ -130,7 +129,6 @@ const Form = () => {
           <input
             value={state.phoneNumber}
             data-testid="phoneNumber"
-            type="number"
             onChange={handleChange}
           />
         </label>
