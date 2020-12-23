@@ -13,7 +13,7 @@ const Form = () => {
   const [error, setError] = useState(null);
 
   const handleChange = ({ target }) => {
-    const key = target.getAttribute("name");
+    let key = target.getAttribute("name");
     setState((prev) => ({
       ...prev,
       [key]: target.value,
