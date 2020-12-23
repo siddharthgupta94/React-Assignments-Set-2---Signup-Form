@@ -94,7 +94,7 @@ const Form = () => {
           />
         </label>
         <br />
-        <div data-testid="gender">
+        <div data-testid="gender" value={state.gender}>
           <label>Gender: </label>
           <label>
             Male:
