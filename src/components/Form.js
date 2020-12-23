@@ -101,13 +101,19 @@ const Form = () => {
         <br />
         <label>
           Gender:
-          <input
+          <select
             name="gender"
-            type="text"
-            value={state.gender}
+            id="gender"
             data-testid="gender"
+            value={state.gender}
             onChange={handleChange}
-          />
+          >
+            <option value="male" selected={state.gender === "male"}>
+              Male
+            </option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
         </label>
         <br />
         <label>
