@@ -13,7 +13,7 @@ const Form = () => {
   const [error, setError] = useState(null);
 
   const handleChange = ({ target }) => {
-    let key = target.getAttribute("name");
+    let key = target.getAttribute("data-testid");
     setState((prev) => ({
       ...prev,
       [key]: target.value,
@@ -78,15 +78,12 @@ const Form = () => {
 
   return (
     <div>
-      <h1>{error && error}</h1>
-      <h1>{message && message}</h1>
-      <form onSubmit={handleSubmit}>
+      <form>
         <label>
           Name:
           <input
             value={state.name}
             data-testid="name"
-            name="name"
             type="text"
             onChange={handleChange}
           />
@@ -95,7 +92,6 @@ const Form = () => {
         <label>
           Email:
           <input
-            name="email"
             type="text"
             value={state.email}
             data-testid="email"
@@ -106,7 +102,6 @@ const Form = () => {
         <label>
           Gender:
           <select
-            name="gender"
             id="gender"
             data-testid="gender"
             value={state.gender}
@@ -123,7 +118,6 @@ const Form = () => {
         <label>
           Phone:
           <input
-            name="phoneNumber"
             type="text"
             value={state.phoneNumber}
             data-testid="phoneNumber"
@@ -134,7 +128,6 @@ const Form = () => {
         <label>
           Password:
           <input
-            name="password"
             value={state.password}
             data-testid="password"
             type="password"
@@ -142,10 +135,12 @@ const Form = () => {
           />
         </label>
         <br />
-        <button data-testid="submit" type="submit">
+        <button data-testid="submit" onClick={handleSubmit}>
           Submit
         </button>
       </form>
+      <h1>{error && error}</h1>
+      <h1>{message && message}</h1>
     </div>
   );
 };
