@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Form = () => {
   const [state, setState] = useState({
@@ -38,7 +38,11 @@ const Form = () => {
   };
 
   const hasGender = () => {
-    return state.gender !== null;
+    return (
+      state.gender === "male" ||
+      state.gender === "female" ||
+      state.gender === "other"
+    );
   };
 
   const isValidPhoneNumber = () => {
@@ -88,50 +92,29 @@ const Form = () => {
           Email:
           <input
             name="email"
+            type="text"
             value={state.email}
             data-testid="email"
             onChange={handleChange}
           />
         </label>
         <br />
-        <div data-testid="gender" value={state.gender}>
-          <label>Gender: </label>
-          <label>
-            Male:
-            <input
-              checked={state.gender === "male"}
-              value="male"
-              name="gender"
-              type="radio"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Female:
-            <input
-              checked={state.gender === "female"}
-              value="female"
-              name="gender"
-              type="radio"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Other:
-            <input
-              checked={state.gender === "other"}
-              value="other"
-              name="gender"
-              type="radio"
-              onChange={handleChange}
-            />
-          </label>
-        </div>
+        <label>
+          Gender:
+          <input
+            name="gender"
+            type="text"
+            value={state.gender}
+            data-testid="gender"
+            onChange={handleChange}
+          />
+        </label>
         <br />
         <label>
           Phone:
           <input
             name="phoneNumber"
+            type="text"
             value={state.phoneNumber}
             data-testid="phoneNumber"
             onChange={handleChange}
