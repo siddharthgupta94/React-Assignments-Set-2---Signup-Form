@@ -12,7 +12,7 @@ const Form = () => {
   const [message, setMessage] = useState("");
 
   const handleChange = ({ target }) => {
-    const key = target.getAttribute("data-testid");
+    const key = target.getAttribute("id");
     setState((prev) => ({
       ...prev,
       [key]: target.value,
@@ -78,6 +78,7 @@ const Form = () => {
           <input
             value={state.name}
             data-testid="name"
+            id="name"
             type="text"
             onChange={handleChange}
           />
@@ -86,47 +87,51 @@ const Form = () => {
         <label>
           Email:
           <input
+            id="email"
             value={state.email}
             data-testid="email"
             onChange={handleChange}
           />
         </label>
         <br />
-        <label>Gender: </label>
-        <label>
-          Male:
-          <input
-            value="male"
-            data-testid="gender"
-            name="gender"
-            type="radio"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Female:
-          <input
-            value="female"
-            data-testid="gender"
-            name="gender"
-            type="radio"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Other:
-          <input
-            value="other"
-            data-testid="gender"
-            name="gender"
-            type="radio"
-            onChange={handleChange}
-          />
-        </label>
+        <div data-testid="gender">
+          <label>Gender: </label>
+          <label>
+            Male:
+            <input
+              id="gender"
+              value="male"
+              name="gender"
+              type="radio"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Female:
+            <input
+              id="gender"
+              value="female"
+              name="gender"
+              type="radio"
+              onChange={handleChange}
+            />
+          </label>
+          <label>
+            Other:
+            <input
+              id="gender"
+              value="other"
+              name="gender"
+              type="radio"
+              onChange={handleChange}
+            />
+          </label>
+        </div>
         <br />
         <label>
           Phone:
           <input
+            id="phoneNumber"
             value={state.phoneNumber}
             data-testid="phoneNumber"
             onChange={handleChange}
@@ -136,6 +141,7 @@ const Form = () => {
         <label>
           Password:
           <input
+            id="password"
             value={state.password}
             data-testid="password"
             type="password"
