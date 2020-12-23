@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Form = () => {
   const [state, setState] = useState({
@@ -12,7 +12,7 @@ const Form = () => {
   const [message, setMessage] = useState("");
 
   const handleChange = ({ target }) => {
-    const key = target.getAttribute("id");
+    const key = target.getAttribute("name");
     setState((prev) => ({
       ...prev,
       [key]: target.value,
@@ -78,7 +78,7 @@ const Form = () => {
           <input
             value={state.name}
             data-testid="name"
-            id="name"
+            name="name"
             type="text"
             onChange={handleChange}
           />
@@ -87,7 +87,7 @@ const Form = () => {
         <label>
           Email:
           <input
-            id="email"
+            name="email"
             value={state.email}
             data-testid="email"
             onChange={handleChange}
@@ -99,7 +99,7 @@ const Form = () => {
           <label>
             Male:
             <input
-              id="gender"
+              defaultChecked={true}
               value="male"
               name="gender"
               type="radio"
@@ -109,7 +109,6 @@ const Form = () => {
           <label>
             Female:
             <input
-              id="gender"
               value="female"
               name="gender"
               type="radio"
@@ -119,7 +118,6 @@ const Form = () => {
           <label>
             Other:
             <input
-              id="gender"
               value="other"
               name="gender"
               type="radio"
@@ -131,7 +129,7 @@ const Form = () => {
         <label>
           Phone:
           <input
-            id="phoneNumber"
+            name="phoneNumber"
             value={state.phoneNumber}
             data-testid="phoneNumber"
             onChange={handleChange}
@@ -141,7 +139,7 @@ const Form = () => {
         <label>
           Password:
           <input
-            id="password"
+            name="password"
             value={state.password}
             data-testid="password"
             type="password"
