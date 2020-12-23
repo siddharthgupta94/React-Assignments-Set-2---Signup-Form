@@ -9,7 +9,7 @@ const Form = () => {
     password: "",
   });
 
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
 
   const handleChange = ({ target }) => {
