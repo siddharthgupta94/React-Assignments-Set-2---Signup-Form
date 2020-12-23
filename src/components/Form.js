@@ -10,6 +10,7 @@ const Form = () => {
   });
 
   const [message, setMessage] = useState("");
+  const [error, setError] = useState(null);
 
   const handleChange = ({ target }) => {
     const key = target.getAttribute("name");
@@ -57,25 +58,26 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isEmpty()) {
-      setMessage("All fields are mandatory");
+      setError("All fields are mandatory");
     } else if (!isAlphaNumeric()) {
-      setMessage("Name is not alphanumeric");
+      setError("Name is not alphanumeric");
     } else if (!hasGender()) {
-      setMessage("Please identify as male, female or others");
+      setError("Please identify as male, female or others");
     } else if (!isValidEmail()) {
-      setMessage("Email must contain @");
+      setError("Email must contain @");
     } else if (!isValidPhoneNumber()) {
-      setMessage("Phone Number must contain only numbers");
+      setError("Phone Number must contain only numbers");
     } else if (!isValidPassword()) {
-      setMessage("Password must contain atleast 6 letters");
+      setError("Password must contain atleast 6 letters");
     } else {
       setMessage(`Hello ${state.email.split("@")[0]}`);
+      setError(null);
     }
   };
 
   return (
     <div>
-      <h1>{message}</h1>
+      <h1>{error ? error : message}</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
