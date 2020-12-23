@@ -57,6 +57,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setMessage(null);
     if (isEmpty()) {
       setError("All fields are mandatory");
     } else if (!isAlphaNumeric()) {
@@ -77,7 +78,8 @@ const Form = () => {
 
   return (
     <div>
-      <h1>{error ? error : message}</h1>
+      <h1>{error && error}</h1>
+      <h1>{message && message}</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
