@@ -99,7 +99,7 @@ const Form = () => {
           <label>
             Male:
             <input
-              defaultChecked={true}
+              checked={state.gender === "male"}
               value="male"
               name="gender"
               type="radio"
@@ -109,6 +109,7 @@ const Form = () => {
           <label>
             Female:
             <input
+              checked={state.gender === "female"}
               value="female"
               name="gender"
               type="radio"
@@ -118,6 +119,7 @@ const Form = () => {
           <label>
             Other:
             <input
+              checked={state.gender === "other"}
               value="other"
               name="gender"
               type="radio"
